@@ -1,6 +1,6 @@
-TimeCandy for Unimelb \n
+TimeCandy for Mebourne University
 
-by Watanuki Soren \n
+by Watanuki Sore
 
-Automatically retrive/parse timetable info from prod.unimelb.edu.au
+Automatically retrive&parse timetable info from prod.unimelb.edu.au
 
