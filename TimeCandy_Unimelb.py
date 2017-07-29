@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-#TimeCandy for Unimelbourne
+#TimeCandy for Melbourne University
 #by Watanuki Soren
 #Automatically retrive/parse timetable info from prod.unimelb.edu.au
 import requests
