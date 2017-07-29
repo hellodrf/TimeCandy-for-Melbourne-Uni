@@ -1,4 +1,4 @@
-TimeCandy for Mebourne University
+TimeCandy for Melbourne University
 
 by Watanuki Soren
 
