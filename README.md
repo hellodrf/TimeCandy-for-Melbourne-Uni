@@ -10,8 +10,7 @@ Automatically retrieve and parse timetable info from https://prod.unimelb.edu.au
 ### Output Example:
 
 
-
---------Start of timetable-------
+ 
 
 Monday
 
@@ -60,6 +59,4 @@ Friday
 1:00pm-2:00pm CHEM10004 Lecture MSDB117 (Theatre)
 
 2:15pm-3:15pm ECON10004 Lecture MSDB117 (Theatre)
-
-
---------End of timetable--------
+ 
