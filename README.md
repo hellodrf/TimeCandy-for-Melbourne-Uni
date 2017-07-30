@@ -4,4 +4,4 @@
 Automatically retrive&parse timetable info from prod.unimelb.edu.au.
 
 
-**Python 3 Require**
+**Python 3 Required**
