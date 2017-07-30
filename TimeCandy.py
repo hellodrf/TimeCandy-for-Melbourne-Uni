@@ -29,8 +29,11 @@ import getpass
 import sys
 import os
 import re
+#import matplotlib.pyplot as plt
 from lxml import html
 from bs4 import BeautifulSoup
+from multiprocessing import Queue
+
 
 #FETCH SYSTEM PLATFORM INFO
 if "idlelib" in sys.modules:
@@ -47,7 +50,9 @@ else:
 #MAIN FUNCTION            
 def time_candy():
     #README
-    print('TimeCandy for UniMelbourne by Watanuki Soren')
+    cls()
+    print('TimeCandy 1.10')
+    print('Written by Watanuki Soren')
     print('Please enter your student account info:')
     print('\n')
     #GET LOGIN CREDENTIAL
@@ -97,8 +102,10 @@ def time_candy():
         cls()
         print('Login Attempt Failed: Invalid Credential.')
         print('your username and password might be wrong.')
-        print('please restart the program and try again.')
-        return 'Error_2'
+        print('press any key...')
+        input()
+        time_candy()
+        return('ERROR2')
     else:
         cls()
         print('Loged on as ' + username)
@@ -114,7 +121,7 @@ def time_candy():
         print('This program cannot analyse your timetable.')
         print('Please contact me at aaronduooo@gmail.com.')
         print('with your info attached: current major,  current semester and degree history.')
-        print('this is expected and very important, thanks.')
+        print('this error is expected and very important, thanks.')
         return 'Error_2'
     
     #EXTRACT TIMETABLE INFO
@@ -162,30 +169,46 @@ def time_candy():
     fri_data = new_list[fri_index+1: ]
     
     cls()
-    print('Timetable for ' + username)
+    print('Timetable for ' + username +':')
     print('\n')
     print('--------Start of timetable--------')
     data_collection = [mon_data, tue_data, wed_data, thu_data, fri_data]
     day_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
     day_count=0
+    database=[]
+   
     for data in data_collection:
-        class_count = len(data)/4
+        class_count = int(len(data)/4)
         print(day_list[day_count])
-        count=0
-        while class_count-count:
+        count=class_count-1
+        while count+1:
             classes = data[4*count: 4*count+4]
             class_type=''.join([i for i in classes[0] if i.isalpha()])
             class_room=classes[2]
             if 'Parkville' in classes[2]:
                 class_room = classes[2][9:]
+           
             print(classes[1][1:], classes[3], class_type, class_room)
-            count+=1
+            
+            '''class_time= classes[3]
+            class_time_start = classes[3]
+            class_time_end = 
+            
+            database.append([day_count, classes[1][1:], classes[3], class_type, class_room])
+            '''
+            count-=1
+        
         day_count+=1
         print('\n')
     print('--------End of timetable--------')
-
+    
+    
+    #fig=plt.figure(figsize=(10,5.89))
+    
+    
+    
+    
 if __name__ == '__main__':
     time_candy()
-    
 
 
