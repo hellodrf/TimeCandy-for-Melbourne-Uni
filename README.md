@@ -10,20 +10,28 @@ Automatically retrive&parse timetable info from prod.unimelb.edu.au.
 Timetable for userunknown:
 
 
---------Start of timetable--------
+--------Start of timetable-------
+
 Monday
+
 1:00pm-2:00pm CHEM10004 Lecture MSDB117(Theatre)
+
 2:15pm-3:15pm BIOL10005 Tutorial RedmondBarry304
+
 3:15pm-4:15pm BIOL10005 Lecture ArtsWestWestWingB101(KathleenFitzpatrickTh.)
 
 
 Tuesday
+
 2:15pm-3:15pm MAST10005 Lecture OldArts122(PLT)
+
 3:15pm-4:15pm ECON10004 Tutorial AlanGilbertG20
 
 
 Wednesday
-11:00am-1:00pm BIOL10005 Practical RedmondBarry210
+
+11:00am-1:00pm BIOL10005 Practical RedmondBar210
+
 1:00pm-2:00pm CHEM10004 Lecture MSDB117(Theatre)
 2:15pm-3:15pm MAST10005 Practical PeterHallG09
 3:15pm-4:15pm BIOL10005 Lecture ArtsWestWestWingB101(KathleenFitzpatrickTh.)
