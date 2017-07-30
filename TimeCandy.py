@@ -56,8 +56,8 @@ def time_candy():
     cls()
     print('TimeCandy 1.10')
     print('Written by Watanuki Soren')
-    print('Please enter your student account info:')
     print('\n')
+    print('UoM Student Login')
     #GET LOGIN CREDENTIAL
     u_lock, p_lock = 1, 1
 
