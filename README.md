@@ -7,12 +7,9 @@ Automatically retrieve and parse timetable info from https://prod.unimelb.edu.au
 
 
 
-### Output Example:
+## Output Example:
 
-
- 
-
-Monday
+###Monday
 
 1:00pm-2:00pm CHEM10004 Lecture MSDB117 (Theatre)
 
@@ -21,14 +18,14 @@ Monday
 3:15pm-4:15pm BIOL10005 Lecture ArtsWestWestWingB101 (KathleenFitzpatrickTh.)
 
 
-Tuesday
+###Tuesday
 
 2:15pm-3:15pm MAST10005 Lecture OldArts122 (PLT)
 
 3:15pm-4:15pm ECON10004 Tutorial AlanGilbertG20
 
 
-Wednesday
+###Wednesday
 
 11:00am-1:00pm BIOL10005 Practical RedmondBar210
 
@@ -39,7 +36,7 @@ Wednesday
 3:15pm-4:15pm BIOL10005 Lecture ArtsWestWestWingB101 (KathleenFitzpatrickTh.)
 
 
-Thursday
+###Thursday
 
 11:00am-12:00pm MAST10005 Lecture SidneyMyerAsiaCtrB02 (CarrilloGantnerTheatre)
 
@@ -50,7 +47,7 @@ Thursday
 2:00pm-5:00pm CHEM10004 Practical Chemistry188 (1stYrLab)
 
 
-Friday
+###Friday
 
 11:00am-12:00pm MAST10005 Lecture TheSpotB01 (CoplandTheatre)
 
