@@ -1,8 +1,8 @@
-#TimeCandy 
+# TimeCandy 
 
-##for Melbourne University
+## for Melbourne University
 
-###by Watanuki Soren
+### by Watanuki Soren
 
 Automatically retrive&parse timetable info from prod.unimelb.edu.au
 
