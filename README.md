@@ -8,7 +8,7 @@ Automatically retrieve and parse timetable info from https://prod.unimelb.edu.au
 
 
 ### Output Example:
-Timetable for userunknown:
+
 
 
 --------Start of timetable-------
