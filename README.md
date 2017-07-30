@@ -57,3 +57,7 @@ Automatically retrieve and parse timetable info from https://prod.unimelb.edu.au
 
 2:15pm-3:15pm ECON10004 Lecture MSDB117 (Theatre)
  
+ 
+Project by Soren of Nico Studios
+![alt text](https://www.sorenthemaster.ga/content/public/upload/%E5%89%AF%E6%9C%AC_0_o.png "Logo Title Text 1")
+
