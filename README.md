@@ -61,4 +61,5 @@ Automatically retrieve and parse timetable info from https://prod.unimelb.edu.au
 ## Project by Soren of Nico Studios
 
 ![alt text](https://www.sorenthemaster.ga/content/public/upload/%E5%89%AF%E6%9C%AC_0_o.png "Logo")
+
 Homepage: [**Nico Studios**](https://www.sorenthemaster.ga)
