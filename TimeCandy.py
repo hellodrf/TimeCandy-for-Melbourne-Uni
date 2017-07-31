@@ -36,7 +36,16 @@ import re
 from lxml import html
 from bs4 import BeautifulSoup
 from multiprocessing import Queue
+import socket
 
+def connect(server):
+  try:
+    host = socket.gethostbyname(server)
+    s = socket.create_connection((host, 80), 2)
+    return True
+  except:
+     pass
+  return False
 
 #FETCH SYSTEM PLATFORM INFO
 if "idlelib" in sys.modules:
@@ -52,12 +61,40 @@ else:
 
 #MAIN FUNCTION            
 def time_candy():
-    #README
+    #CLEAN SCREEN
     cls()
-    print('TimeCandy 1.10')
-    print('Written by Watanuki Soren')
-    print('\n')
+    #VALIDATE CONNECTION
+    print('----------------------------------')
+    print('TimeCandy 1.10 | by Watanuki Soren')
+    print('----------------------------------') 
+    print('Connecting to Melbourne University Timetabling Server...')
+    if not connect('prod.ss.unimelb.edu.au'):
+        if connect('stackoverflow.com'):
+            cls()
+            print('Error: Server Down.')
+            print('Melbourne University\' server might be down.')
+            print('Please report this issule to your IT department.')
+            print('press any key...')
+            input()
+            return 'Error_3'
+        else:
+            cls()
+            print('Error: No internet.')
+            print('Unable to establish connection with the remote server.')
+            print('Please check your internet connection.')
+            print('press any key...')
+            input()
+            return 'Error_4'
+            
+    #README
+    cls()    
+    print('----------------------------------')
+    print('TimeCandy 1.10 | by Watanuki Soren')
+    print('----------------------------------')
+    print('-----------------')
     print('UoM Student Login')
+    print('-----------------')
+    
     #GET LOGIN CREDENTIAL
     u_lock, p_lock = 1, 1
 
@@ -75,6 +112,9 @@ def time_candy():
         else:
             p_lock = 0       
     cls()
+    print('----------------------------------')
+    print('TimeCandy 1.10 | by Watanuki Soren')
+    print('----------------------------------') 
     print('Logining in...')
     
     #FETCH SESSION DATA
@@ -100,9 +140,22 @@ def time_candy():
     #COMMIT LOGIN
     result = r.post(login_url, data = payload)
 
+    #HTML VISIBLE VALIDATOR
+    def visible(element):
+        if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
+            return False
+        elif re.match('<!--.*-->', str(element.encode('utf-8'))):
+            return False
+        elif element in ['\n', '\t', ' ', '']:
+            return False
+        return True
+        
     #VALIDATE SESSION
     if not 'eStudent' in result.text:
         cls()
+        print('----------------------------------')
+        print('TimeCandy 1.10 | by Watanuki Soren')
+        print('----------------------------------')        
         print('Login Attempt Failed: Invalid Credential.')
         print('your username and password might be wrong.')
         print('press any key...')
@@ -110,8 +163,15 @@ def time_candy():
         time_candy()
         return('ERROR2')
     else:
+        url = 'https://prod.ss.unimelb.edu.au/student/SM/PersDtls10.aspx?r=%23UM.STUDENT.APPLICANT&f=$S1.EST.PERSDTLS.WEB'
+        result = r.get(url)
+        tree = html.fromstring(result.text)
+        first_name = list(set(tree.xpath("//input[@name=\"ctl00$Content$txtGivenName$InputControl\"]/@value")))[0]
         cls()
-        print('Loged on as ' + username)
+        print('----------------------------------')
+        print('TimeCandy 1.10 | by Watanuki Soren')
+        print('----------------------------------') 
+        print('Welcome, ' + first_name +'!')
         print('Fetching Data...')
         
     #FETCH DATA
@@ -120,6 +180,9 @@ def time_candy():
     
     #VALIDATE DATA
     if 'CREM' not in result.text:
+        print('----------------------------------')
+        print('TimeCandy 1.10 | by Watanuki Soren')
+        print('----------------------------------')        
         print('Timetable Error: ')
         print('This program cannot analyse your timetable.')
         print('Please contact me at aaronduooo@gmail.com.')
@@ -133,21 +196,15 @@ def time_candy():
     
     #PARSE DATA
     cls()
+    print('----------------------------------')
+    print('TimeCandy 1.10 | by Watanuki Soren')
+    print('----------------------------------')        
     print('Parsing html document...')
     soup = BeautifulSoup(result.text, "lxml")
     data = soup.findAll(text=True)
-    
-    def visible(element):
-        if element.parent.name in ['style', 'script', '[document]', 'head', 'title']:
-            return False
-        elif re.match('<!--.*-->', str(element.encode('utf-8'))):
-            return False
-        elif element in ['\n', '\t', ' ', '']:
-            return False
-        return True
  
     result = list(filter(visible, data))
-    new_list=[]
+    new_list = []
     for item in result:
         new_item = re.sub('\s+', '', item)
         new_list.append(new_item)
@@ -158,7 +215,15 @@ def time_candy():
     
     #ANALYSE
     cls()
+    print('----------------------------------')
+    print('TimeCandy 1.10 | by Watanuki Soren')
+    print('----------------------------------') 
     print('Analysing timetable data...')
+    url = 'https://prod.ss.unimelb.edu.au/student/SM/PersDtls10.aspx?r=%23UM.STUDENT.APPLICANT&f=$S1.EST.PERSDTLS.WEB'
+    result = r.get(url)
+    tree = html.fromstring(result.text)
+    full_name = list(set(tree.xpath("//input[@name=\"ctl00$Content$txtFormalName1$InputControl\"]/@value")))[0]
+    
     mon_index = 0
     tue_index = new_list.index('Tuesday')
     wed_index = new_list.index('Wednesday')
@@ -172,9 +237,11 @@ def time_candy():
     fri_data = new_list[fri_index+1: ]
     
     cls()
-    print('Timetable for ' + username +':')
-    print('\n')
-    print('--------Start of timetable--------')
+    print('----------------------------------')
+    print('TimeCandy 1.10 | by Watanuki Soren')
+    print('----------------------------------') 
+    print('Student: ' + full_name)
+    print('--------------------------------------')
     data_collection = [mon_data, tue_data, wed_data, thu_data, fri_data]
     day_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
     day_count=0
@@ -203,7 +270,8 @@ def time_candy():
         
         day_count+=1
         print('\n')
-    print('--------End of timetable--------')
+    
+    print('↑↑ Scroll up for full timetable ↑↑')
     
     
     #fig=plt.figure(figsize=(10,5.89))
