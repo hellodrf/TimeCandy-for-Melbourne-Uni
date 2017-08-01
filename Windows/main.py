@@ -265,7 +265,11 @@ def time_candy():
         print('\n')
 
     print('↑↑ Scroll up for full timetable ↑↑')
-     
+    print('\n')
+    print('press any key to return...')
+    input()
+    time_candy()
+    
 if __name__ == '__main__':
     time_candy()
 
