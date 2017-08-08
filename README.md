@@ -2,8 +2,7 @@
 
 Automatically retrieve and parse timetable info from https://prod.unimelb.edu.au.
 
-
-**Python 3 Required.**
+Wrote in Python 3
 
 
 

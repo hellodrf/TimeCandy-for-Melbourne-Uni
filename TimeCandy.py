@@ -241,7 +241,7 @@ def time_candy():
     print('TimeCandy 1.10 | by Watanuki Soren')
     print('----------------------------------') 
     print('Student: ' + full_name)
-    print('--------------------------------------')
+    print('----------------------------------')
     data_collection = [mon_data, tue_data, wed_data, thu_data, fri_data]
     day_list = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
     day_count=0
