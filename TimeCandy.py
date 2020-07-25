@@ -43,7 +43,7 @@ def time_candy():
     cls()
     #VALIDATE CONNECTION
     print('----------------------------------')
-    print('TimeCandy 1.10 | by Watanuki Soren')
+    print('TimeCandy 1.10 | by Aaron Du')
     print('----------------------------------') 
     print('Connecting to Melbourne University Timetabling Server...')
     if not connect('prod.ss.unimelb.edu.au'):
