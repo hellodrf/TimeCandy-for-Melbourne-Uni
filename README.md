@@ -1,6 +1,6 @@
 # TimeCandy for Melbourne University
 
-Automatically retrieve and parse timetable info from https://prod.unimelb.edu.au (require auth).
+Automatically retrieve timetable info from https://prod.unimelb.edu.au (require auth).
 
 Wrote in Python 3
 
